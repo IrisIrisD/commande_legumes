@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire de commande</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/carotte.png">
 </head>
 <body>
-    <form>
+    <img src="images/icone.ico">
+    <form name="Formulaire" onsubmit="return validateForm()" method="post">
         <!-- Infos persos. Sera peut-être plus tard récupéré par CAS ?? -->
         <label for="name">Nom</label><br>
         <input type="text" id="name" name="name"><br>
         <label for="prename">Prénom </label><br>
         <input type="text" id="prename" name="prename">
-        
+        <p></p>
 
-        <p><b>Carottes</b></p>
-        <input type="radio" id="half" name="qte_carottes" value="500">
-        <label for="half">500g</label><br>
-        <input type="radio" id="un" name="qte_carottes" value="1000">
-        <label for="un">1kg</label><br>
+        <label htmlFor="car"><b>Carottes : </b></label>
+        <select id="qte_car" name="choix_car">
+            <option value="500">500g</option>
+            <option value="1000">1 kg</option>
+            <option value="1500">1,5 kg</option>
+        </select>
         <!-- Peut etre plus genre les gens entrent ? -->
-        
-        <p><b>Pommes de terre</b></p>
-        <input type="radio" id="grosses" name="qte_pdt">
-        <label for="big">Grosses</label><br>
-        <input type="radio" id="moy" name="qte_pdt">
-        <label for="mid">Moyennes</label><br>
-        <input type="radio" id="moy" name="qte_pdt">
-        <label for="gre">Grenailles</label><br>
+        <p>        </p>
 
-        ajouter choix qté
+        <label htmlFor="pdt"><b>Pommes de terre : </b></label>
+        <select id="qte_pdt" name="choix_qte_pdt">
+            <option value="1">1 kg</option>
+            <option value="2">2 kg</option>
+            <option value="3">3 kg</option>
+            <option value="sac">sac de 10 kg pour 15€, sans choix de type ou taille</option>
+        </select>
+        <span>, de type </span> 
+        <select id="type pdt" name="choix_type_pdt">
+            <option value="tendre">tendre</option>
+            <option value="ferme">ferme</option>
+        </select>
+        <span> et au format  </span>
+        <select id="taille pdt" name="choix_taille_pdt">
+            <option value="vrac">Vrac (2€ le kg)</option>
+            <option value="mid">Moyenne (2€50 le kg)</option>
+            <option value="big">Grenailles (3€ le kg)</option>
+        </select>
+        <p></p>
+        <button type="submit" class="btn" name="boutton_envoi" onclick="envoyerFormulaire()">
+            Envoyer
+        </button>
+
+
     </form>
 </body>
 </html>
